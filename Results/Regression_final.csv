@@ -1,0 +1,15 @@
+                                                                                                                                                                    Model Training Phase,,,,,,,,,,
+                                                                                                  Dataset1(IV2),                                                                  Dataset1(IV2),,,,,                                                                  Dataset2(IV2),,,,
+Machine Learning Algorithms(IV1),                              Python,,                               R,,p-value,                              Python,,                               R,,p-value
+,Package,DRAM ,Package,DRAM ,,Package,DRAM ,Package,DRAM ,
+Decision Tree,5,5,2.15,0.22,0.002,17.07,9.02,10.65,1.36,0.002
+Gaussian Regression,4483.33,365.55,36.92,3.64,0.002,69838.74,982.62,7124.58,573.21,0.002
+Linear Regression,1.07,0.16,17.59,1.71,0.002,1021.08,57.16,38485.03,2533.54,0.002
+Neural Network Regression,3501.85,113.12,56.79,5.88,0.002,7087.74,854.98,356.38,46.34,0.002
+Support Vector Machine,885.85,76.54,1923,175,0.002,4702.77,5913.24,55962.95,4545.79,0.14
+                                                                                                                                                                            Inferences Phase,,,,,,,,,,
+Decision Tree,0.41,0.06,0.37,0.03,0.008,1.23,0.66,0.73,0.11,0.002
+Gaussian Regression,1504.26,123.24,2.39,0.24,0.002,9543.32,1123.58,322.63,31.2,0.002
+Linear Regression,0.59,0.07,17.5,1.75,0.002,34.67,5.73,501.42,39.7,0.48
+Neural Network Regression,3.53,0.3,0.32,0.03,0.002,8.49,3.39,1.45,0.83,0.002
+Support Vector Machine,234.16,19.83,0.37,0.03,0.002,3426.23,582.33,28.76,2.73,0.002
