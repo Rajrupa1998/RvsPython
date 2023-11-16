@@ -61,40 +61,40 @@ X, X_test, Y, Y_test = train_test_split(dataframe[training_features],
 X_train, X_pred, Y_train, Y_pred = train_test_split(X,
                                                     Y,
                                                      test_size=0.25)
-# def linear_regression():
-#     linear_regression_model = LinearRegression()
-#     return linear_regression_model.fit(X_train,Y_train)
+def linear_regression():
+    linear_regression_model = LinearRegression()
+    return linear_regression_model.fit(X_train,Y_train)
 
-# @measure_energy(handler=csv_handler)
-# def test_linear_regression():
-#     linear_regression()
+@measure_energy(handler=csv_handler)
+def test_linear_regression():
+    linear_regression()
 
-# linear_regression_model=linear_regression()
+linear_regression_model=linear_regression()
 
-# @measure_energy(handler=csv_handler)
-# def test_linear_regression_inference():
-#     y_infer=linear_regression_model.predict(X_pred)
-#     return y_infer
+@measure_energy(handler=csv_handler)
+def test_linear_regression_inference():
+    y_infer=linear_regression_model.predict(X_pred)
+    return y_infer
 
-# def linear_regression_prediction():
-#     print("The below details are for Linear Regression..")
-#     predicted_entropy = linear_regression_model.predict(X_test)
-#     r2=r2_score(Y_test,predicted_entropy)
-#     mae=mean_absolute_error(Y_test,predicted_entropy)
-#     mse=mean_squared_error(Y_test,predicted_entropy)
-#     rmse=np.sqrt(mse)
-#     print("r2 value= ",r2)
-#     print("MAE value= ",mae)
-#     print("MSE value= ",mse)
-#     print("RMSE value= ",rmse)
+def linear_regression_prediction():
+    print("The below details are for Linear Regression..")
+    predicted_entropy = linear_regression_model.predict(X_test)
+    r2=r2_score(Y_test,predicted_entropy)
+    mae=mean_absolute_error(Y_test,predicted_entropy)
+    mse=mean_squared_error(Y_test,predicted_entropy)
+    rmse=np.sqrt(mse)
+    print("r2 value= ",r2)
+    print("MAE value= ",mae)
+    print("MSE value= ",mse)
+    print("RMSE value= ",rmse)
 
-# linear_regression_prediction()
+linear_regression_prediction()
 
-# for i in range(10):
-#     sleep()
-#     test_linear_regression()
-#     sleep()
-#     test_linear_regression_inference()
+for i in range(10):
+    sleep()
+    test_linear_regression()
+    sleep()
+    test_linear_regression_inference()
 
 sc_X = StandardScaler()
 sc_Y = StandardScaler()
@@ -103,124 +103,124 @@ Y1= sc_Y.fit_transform(Y_train)
 Y1=Y1.astype(int)
 
 
-# def gaussian_regression():
-#     gaussian_regression_model = GaussianProcessRegressor()
-#     return gaussian_regression_model.fit(X1,Y1.ravel())
+def gaussian_regression():
+    gaussian_regression_model = GaussianProcessRegressor()
+    return gaussian_regression_model.fit(X1,Y1.ravel())
 
 
-# @measure_energy(handler=csv_handler)
-# def test_gaussian_regression():
-#     gaussian_regression()
+@measure_energy(handler=csv_handler)
+def test_gaussian_regression():
+    gaussian_regression()
     
-# gaussian_regression_model=gaussian_regression()
+gaussian_regression_model=gaussian_regression()
 
-# @measure_energy(handler=csv_handler)
-# def test_test_gaussian_regression_inference():
-#     y_infer=gaussian_regression_model.predict(X_pred)
-#     return y_infer
+@measure_energy(handler=csv_handler)
+def test_test_gaussian_regression_inference():
+    y_infer=gaussian_regression_model.predict(X_pred)
+    return y_infer
 
-# def gaussian_regression_prediction():
-#     print("The below details are for Gaussian Regression..")
-#     predicted_entropy = gaussian_regression_model.predict(X_test)
-#     r2=r2_score(Y_test,predicted_entropy)
-#     mae=mean_absolute_error(Y_test,predicted_entropy)
-#     mse=mean_squared_error(Y_test,predicted_entropy)
-#     rmse=np.sqrt(mse)
-#     print("r2 value= ",r2)
-#     print("MAE value= ",mae)
-#     print("MSE value= ",mse)
-#     print("RMSE value= ",rmse)
+def gaussian_regression_prediction():
+    print("The below details are for Gaussian Regression..")
+    predicted_entropy = gaussian_regression_model.predict(X_test)
+    r2=r2_score(Y_test,predicted_entropy)
+    mae=mean_absolute_error(Y_test,predicted_entropy)
+    mse=mean_squared_error(Y_test,predicted_entropy)
+    rmse=np.sqrt(mse)
+    print("r2 value= ",r2)
+    print("MAE value= ",mae)
+    print("MSE value= ",mse)
+    print("RMSE value= ",rmse)
     
-#gaussian_regression_prediction()
+gaussian_regression_prediction()
 
-# test_gaussian_regression()
+test_gaussian_regression()
 
-# for i in range(10):
-#     print("Hi...")
-#     sleep()
-#     test_gaussian_regression()
-#     #sleep()
-#     #test_test_gaussian_regression_inference()
+for i in range(10):
+    print("Hi...")
+    sleep()
+    test_gaussian_regression()
+    #sleep()
+    #test_test_gaussian_regression_inference()
 
-# test_gaussian_regression()
+test_gaussian_regression()
 
-# def decision_tree_regression():
-#     decision_tree_regression_model = DecisionTreeRegressor(random_state = 0) 
-#     return decision_tree_regression_model.fit(X_train,Y_train)
+def decision_tree_regression():
+    decision_tree_regression_model = DecisionTreeRegressor(random_state = 0) 
+    return decision_tree_regression_model.fit(X_train,Y_train)
 
-# @measure_energy(handler=csv_handler)
-# def test_decision_tree_regression():
-#     decision_tree_regression()
+@measure_energy(handler=csv_handler)
+def test_decision_tree_regression():
+    decision_tree_regression()
 
-# decision_tree_regression_model = decision_tree_regression()
+decision_tree_regression_model = decision_tree_regression()
 
-# @measure_energy(handler=csv_handler)
-# def test_decision_tree_regression_inference():
-#     y_infer=decision_tree_regression_model.predict(X_pred)
-#     return y_infer
+@measure_energy(handler=csv_handler)
+def test_decision_tree_regression_inference():
+    y_infer=decision_tree_regression_model.predict(X_pred)
+    return y_infer
 
-# def decision_tree_regression_prediction():
-#     print("The below details are for Decision tree Regression..")
-#     predicted_entropy = decision_tree_regression_model.predict(X_test)
-#     r2=r2_score(Y_test,predicted_entropy)
-#     mae=mean_absolute_error(Y_test,predicted_entropy)
-#     mse=mean_squared_error(Y_test,predicted_entropy)
-#     rmse=np.sqrt(mse)
-#     print("r2 value= ",r2)
-#     print("MAE value= ",mae)
-#     print("MSE value= ",mse)
-#     print("RMSE value= ",rmse)
+def decision_tree_regression_prediction():
+    print("The below details are for Decision tree Regression..")
+    predicted_entropy = decision_tree_regression_model.predict(X_test)
+    r2=r2_score(Y_test,predicted_entropy)
+    mae=mean_absolute_error(Y_test,predicted_entropy)
+    mse=mean_squared_error(Y_test,predicted_entropy)
+    rmse=np.sqrt(mse)
+    print("r2 value= ",r2)
+    print("MAE value= ",mae)
+    print("MSE value= ",mse)
+    print("RMSE value= ",rmse)
    
 
-# for i in range(10):
-#     sleep()
-#     #decision_tree_regression_prediction()
-#     test_decision_tree_regression()
-#     #test_decision_tree_regression
-#     sleep()
-#     test_decision_tree_regression_inference()
+for i in range(10):
+    sleep()
+    #decision_tree_regression_prediction()
+    test_decision_tree_regression()
+    #test_decision_tree_regression
+    sleep()
+    test_decision_tree_regression_inference()
 
 
 
-# def support_vector_regression():
-#     svr_regression_model= SVR()
-#     return svr_regression_model.fit(X1,Y1.ravel())
+def support_vector_regression():
+    svr_regression_model= SVR()
+    return svr_regression_model.fit(X1,Y1.ravel())
 
-# @measure_energy(handler=csv_handler)
-# def test_support_vector_regression():
-#     support_vector_regression()
+@measure_energy(handler=csv_handler)
+def test_support_vector_regression():
+    support_vector_regression()
 
-# svr_regression_model=support_vector_regression()
+svr_regression_model=support_vector_regression()
 
-# @measure_energy(handler=csv_handler)
-# def test_support_vector_regression_inference():
-#     y_infer=svr_regression_model.predict(X_pred)
-#     return y_infer
+@measure_energy(handler=csv_handler)
+def test_support_vector_regression_inference():
+    y_infer=svr_regression_model.predict(X_pred)
+    return y_infer
 
-# def support_vector_regression_prediction():
-#     print("The below details are for support vector Regression..")
-#     predicted_entropy = svr_regression_model.predict(X_test)
-#     r2=r2_score(Y_test,predicted_entropy)
-#     mae=mean_absolute_error(Y_test,predicted_entropy)
-#     mse=mean_squared_error(Y_test,predicted_entropy)
-#     rmse=np.sqrt(mse)
-#     print("r2 value= ",r2)
-#     print("MAE value= ",mae)
-#     print("MSE value= ",mse)
-#     print("RMSE value= ",rmse)
+def support_vector_regression_prediction():
+    print("The below details are for support vector Regression..")
+    predicted_entropy = svr_regression_model.predict(X_test)
+    r2=r2_score(Y_test,predicted_entropy)
+    mae=mean_absolute_error(Y_test,predicted_entropy)
+    mse=mean_squared_error(Y_test,predicted_entropy)
+    rmse=np.sqrt(mse)
+    print("r2 value= ",r2)
+    print("MAE value= ",mae)
+    print("MSE value= ",mse)
+    print("RMSE value= ",rmse)
     
 
-# for i in range(10):
-#     sleep()
-#     #decision_tree_regression_prediction()
-#     test_support_vector_regression()
-#     #test_decision_tree_regression
-#     sleep()
-#     test_support_vector_regression_inference()
+for i in range(10):
+    sleep()
+    #decision_tree_regression_prediction()
+    test_support_vector_regression()
+    #test_decision_tree_regression
+    sleep()
+    test_support_vector_regression_inference()
 
 
-# # support_vector_regression_prediction()
-# # test_support_vector_regression()
+# support_vector_regression_prediction()
+# test_support_vector_regression()
 
 def neural_network_regression():
     neural_networkn_model= MLPRegressor()
@@ -257,27 +257,27 @@ for i in range(10):
     sleep()
     neural_network_regression_inference()
 
-# neural_network_regression_prediction()
-# test_neural_network_regression()
+neural_network_regression_prediction()
+test_neural_network_regression()
     
 
 
-# linear_regression_prediction()
-# gaussian_regression_prediction()
-# decision_tree_regression_prediction()
-# support_vector_regression_prediction()
-# neural_network_regression_prediction()
+linear_regression_prediction()
+gaussian_regression_prediction()
+decision_tree_regression_prediction()
+support_vector_regression_prediction()
+neural_network_regression_prediction()
 
 #ridge_regression_prediction()
 
-# function_list=[test_decision_tree_regression,test_gaussian_regression,test_linear_regression,test_neural_network_regression,test_support_vector_regression,test_decision_tree_regression_inference,test_linear_regression_inference,test_test_gaussian_regression_inference,test_support_vector_regression_inference,test_linear_regression_inference]
+function_list=[test_decision_tree_regression,test_gaussian_regression,test_linear_regression,test_neural_network_regression,test_support_vector_regression,test_decision_tree_regression_inference,test_linear_regression_inference,test_test_gaussian_regression_inference,test_support_vector_regression_inference,test_linear_regression_inference]
 
-# for i in range(10):
-#     print("This is iteration no:",i)
-#     random.shuffle(function_list)
-#     for j in range(len(function_list)):
-#         sleep()
-#         function_list[j]()
+for i in range(10):
+    print("This is iteration no:",i)
+    random.shuffle(function_list)
+    for j in range(len(function_list)):
+        sleep()
+        function_list[j]()
     
 
 

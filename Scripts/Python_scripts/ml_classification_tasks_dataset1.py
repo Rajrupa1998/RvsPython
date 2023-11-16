@@ -83,21 +83,21 @@ def test_random_forest_classification():
     random_forest_classification()
 
 
-# def random_forest_classification_prediction():
-#     print("The below details are for Random forest classification..")
-#     score=random_forest_model.score(X_test,Y_test)
-#     print("Model score= ",score)
-#     predicted_entropy = random_forest_model.predict(X_test)
-#     cm = confusion_matrix(Y_test,predicted_entropy)
-#     tn, fp, fn, tp = cm.ravel()
-#     print("Accuracy= ",(tp+tn)/(tp+tn+fp+fn))
-#     recall = tp/(tp+fn)
-#     precision=tp/(tp+fp)
-#     print("Recall = Sensitivity = ",tp/(tp+fn))
-#     print("Specificity= ", tn/(tn+fp))
-#     print("Precision= ",tp/(tp+fp))
-#     f1score= 2 *(recall*precision)/(precision+recall)
-#     print("f1 score= ", f1score) 
+def random_forest_classification_prediction():
+    print("The below details are for Random forest classification..")
+    score=random_forest_model.score(X_test,Y_test)
+    print("Model score= ",score)
+    predicted_entropy = random_forest_model.predict(X_test)
+    cm = confusion_matrix(Y_test,predicted_entropy)
+    tn, fp, fn, tp = cm.ravel()
+    print("Accuracy= ",(tp+tn)/(tp+tn+fp+fn))
+    recall = tp/(tp+fn)
+    precision=tp/(tp+fp)
+    print("Recall = Sensitivity = ",tp/(tp+fn))
+    print("Specificity= ", tn/(tn+fp))
+    print("Precision= ",tp/(tp+fp))
+    f1score= 2 *(recall*precision)/(precision+recall)
+    print("f1 score= ", f1score) 
 
 
 test_random_forest_classification()
@@ -121,21 +121,21 @@ def test_logistic_regression_classification_inference():
     return y_infer
 
 
-# def logistic_regression_classification_prediction():
-#     print("The below details are for Logistic Regression classification..")
-#     score=logistic_regression_model.score(X_test,Y_test)
-#     print("Model score= ",score)
-#     predicted_entropy = logistic_regression_model.predict(X_test)
-#     cm = confusion_matrix(Y_test,predicted_entropy)
-#     tn, fp, fn, tp = cm.ravel()
-#     print("Accuracy= ",(tp+tn)/(tp+tn+fp+fn))
-#     recall = tp/(tp+fn)
-#     precision=tp/(tp+fp)
-#     print("Recall = Sensitivity = ",tp/(tp+fn))
-#     print("Specificity= ", tn/(tn+fp))
-#     print("Precision= ",tp/(tp+fp))
-#     f1score= 2 *(recall*precision)/(precision+recall)
-#     print("f1 score= ", f1score) 
+def logistic_regression_classification_prediction():
+    print("The below details are for Logistic Regression classification..")
+    score=logistic_regression_model.score(X_test,Y_test)
+    print("Model score= ",score)
+    predicted_entropy = logistic_regression_model.predict(X_test)
+    cm = confusion_matrix(Y_test,predicted_entropy)
+    tn, fp, fn, tp = cm.ravel()
+    print("Accuracy= ",(tp+tn)/(tp+tn+fp+fn))
+    recall = tp/(tp+fn)
+    precision=tp/(tp+fp)
+    print("Recall = Sensitivity = ",tp/(tp+fn))
+    print("Specificity= ", tn/(tn+fp))
+    print("Precision= ",tp/(tp+fp))
+    f1score= 2 *(recall*precision)/(precision+recall)
+    print("f1 score= ", f1score) 
 
 
 def gaussian_NB_classification():
@@ -153,21 +153,21 @@ def test_gaussian_NB_classification_inference():
     y_infer=naive_bayes_model.predict(X_pred)
     return y_infer
 
-# def gaussian_NB_classification_prediction():  
-#     print("The below details are for Naive Bayes classification..")
-#     score=naive_bayes_model.score(X_test,Y_test)
-#     print("Model score= ",score)
-#     predicted_entropy = naive_bayes_model.predict(X_test)
-#     cm = confusion_matrix(Y_test,predicted_entropy)
-#     tn, fp, fn, tp = cm.ravel()
-#     print("Accuracy= ",(tp+tn)/(tp+tn+fp+fn))
-#     recall = tp/(tp+fn)
-#     precision=tp/(tp+fp)
-#     print("Recall = Sensitivity = ",tp/(tp+fn))
-#     print("Specificity= ", tn/(tn+fp))
-#     print("Precision= ",tp/(tp+fp))
-#     f1score= 2 *(recall*precision)/(precision+recall)
-#     print("f1 score= ", f1score) 
+def gaussian_NB_classification_prediction():  
+    print("The below details are for Naive Bayes classification..")
+    score=naive_bayes_model.score(X_test,Y_test)
+    print("Model score= ",score)
+    predicted_entropy = naive_bayes_model.predict(X_test)
+    cm = confusion_matrix(Y_test,predicted_entropy)
+    tn, fp, fn, tp = cm.ravel()
+    print("Accuracy= ",(tp+tn)/(tp+tn+fp+fn))
+    recall = tp/(tp+fn)
+    precision=tp/(tp+fp)
+    print("Recall = Sensitivity = ",tp/(tp+fn))
+    print("Specificity= ", tn/(tn+fp))
+    print("Precision= ",tp/(tp+fp))
+    f1score= 2 *(recall*precision)/(precision+recall)
+    print("f1 score= ", f1score) 
 
 
 
@@ -187,21 +187,21 @@ def test_SVM_classification_inference():
     y_infer=svm_classifier_model.predict(X_pred)
     return y_infer
 
-# def svm_classification_prediction():  
-#     print("The below details are for SVM classification..")
-#     score=svm_classifier_model.score(X_test,Y_test)
-#     print("Model score= ",score)
-#     predicted_entropy = svm_classifier_model.predict(X_test)
-#     cm = confusion_matrix(Y_test,predicted_entropy)
-#     tn, fp, fn, tp = cm.ravel()
-#     print("Accuracy= ",(tp+tn)/(tp+tn+fp+fn))
-#     recall = tp/(tp+fn)
-#     precision=tp/(tp+fp)
-#     print("Recall = Sensitivity = ",tp/(tp+fn))
-#     print("Specificity= ", tn/(tn+fp))
-#     print("Precision= ",tp/(tp+fp))
-#     f1score= 2 *(recall*precision)/(precision+recall)
-#     print("f1 score= ", f1score) 
+def svm_classification_prediction():  
+    print("The below details are for SVM classification..")
+    score=svm_classifier_model.score(X_test,Y_test)
+    print("Model score= ",score)
+    predicted_entropy = svm_classifier_model.predict(X_test)
+    cm = confusion_matrix(Y_test,predicted_entropy)
+    tn, fp, fn, tp = cm.ravel()
+    print("Accuracy= ",(tp+tn)/(tp+tn+fp+fn))
+    recall = tp/(tp+fn)
+    precision=tp/(tp+fp)
+    print("Recall = Sensitivity = ",tp/(tp+fn))
+    print("Specificity= ", tn/(tn+fp))
+    print("Precision= ",tp/(tp+fp))
+    f1score= 2 *(recall*precision)/(precision+recall)
+    print("f1 score= ", f1score) 
 
 
 
@@ -223,30 +223,30 @@ def test_decision_tree_classification_inference():
     y_infer=decision_tree_classifier_model.predict(X_pred)
     return y_infer
 
-# def decision_tree_cassification_prediction():  
-#     print("The below details are for Decision tree classification..")
-#     score=decision_tree_classifier_model.score(X_test,Y_test)
-#     print("Model score= ",score)
-#     predicted_entropy = decision_tree_classifier_model.predict(X_test)
-#     cm = confusion_matrix(Y_test,predicted_entropy)
-#     tn, fp, fn, tp = cm.ravel()
-#     print("Accuracy= ",(tp+tn)/(tp+tn+fp+fn))
-#     recall = tp/(tp+fn)
-#     precision=tp/(tp+fp)
-#     print("Recall = Sensitivity = ",tp/(tp+fn))
-#     print("Specificity= ", tn/(tn+fp))
-#     print("Precision= ",tp/(tp+fp))
-#     f1score= 2 *(recall*precision)/(precision+recall)
-#     print("f1 score= ", f1score)    
+def decision_tree_cassification_prediction():  
+    print("The below details are for Decision tree classification..")
+    score=decision_tree_classifier_model.score(X_test,Y_test)
+    print("Model score= ",score)
+    predicted_entropy = decision_tree_classifier_model.predict(X_test)
+    cm = confusion_matrix(Y_test,predicted_entropy)
+    tn, fp, fn, tp = cm.ravel()
+    print("Accuracy= ",(tp+tn)/(tp+tn+fp+fn))
+    recall = tp/(tp+fn)
+    precision=tp/(tp+fp)
+    print("Recall = Sensitivity = ",tp/(tp+fn))
+    print("Specificity= ", tn/(tn+fp))
+    print("Precision= ",tp/(tp+fp))
+    f1score= 2 *(recall*precision)/(precision+recall)
+    print("f1 score= ", f1score)    
 
 
 
 
 
-# random_forest_classification_prediction()
-# logistic_regression_classification_prediction()
-# gaussian_NB_classification_prediction()
-# svm_classification_prediction()
+random_forest_classification_prediction()
+logistic_regression_classification_prediction()
+gaussian_NB_classification_prediction()
+svm_classification_prediction()
 # decision_tree_cassification_prediction()
 
 function_list=[test_random_forest_classification,test_logistic_regression_classification,test_gaussian_NB_classification,test_SVM_classification,test_decision_tree_classification,test_decision_tree_classification_inference,test_gaussian_NB_classification_inference,test_logistic_regression_classification_inference,test_SVM_classification_inference,test_random_forest_classification_inference]

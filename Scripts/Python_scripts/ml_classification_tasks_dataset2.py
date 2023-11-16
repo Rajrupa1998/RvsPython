@@ -66,139 +66,139 @@ X1 = sc_X.fit_transform(X_train)
 Y1= sc_Y.fit_transform(Y_train)
 Y1=Y1.astype(int)
 
-# def random_forest_classification():
-#     random_forest_model = RandomForestClassifier()
-#     return random_forest_model.fit(X1,Y1.ravel())
+def random_forest_classification():
+    random_forest_model = RandomForestClassifier()
+    return random_forest_model.fit(X1,Y1.ravel())
 
-# random_forest_model=random_forest_classification()
+random_forest_model=random_forest_classification()
 
-# @measure_energy(handler=csv_handler)
-# def test_random_forest_classification_inference():
-#     y_infer=random_forest_model.predict(X_pred)
-#     return y_infer
+@measure_energy(handler=csv_handler)
+def test_random_forest_classification_inference():
+    y_infer=random_forest_model.predict(X_pred)
+    return y_infer
 
-# @measure_energy(handler=csv_handler)
-# def test_random_forest_classification():
-#     random_forest_classification()
-
-
-# def random_forest_classification_prediction():
-#     print("The below details are for Random forest classification..")
-#     score=random_forest_model.score(X_test,Y_test)
-#     print("Model score= ",score)
-#     predicted_entropy = random_forest_model.predict(X_test)
-#     cm = confusion_matrix(Y_test,predicted_entropy)
-#     tn, fp, fn, tp = cm
-#     print("Accuracy= ",(tp+tn)/(tp+tn+fp+fn))
-#     recall = tp/(tp+fn)
-#     precision=tp/(tp+fp)
-#     print("Recall = Sensitivity = ",tp/(tp+fn))
-#     print("Specificity= ", tn/(tn+fp))
-#     print("Precision= ",tp/(tp+fp))
-#     f1score= 2 *(recall*precision)/(precision+recall)
-#     print("f1 score= ", f1score) 
+@measure_energy(handler=csv_handler)
+def test_random_forest_classification():
+    random_forest_classification()
 
 
+def random_forest_classification_prediction():
+    print("The below details are for Random forest classification..")
+    score=random_forest_model.score(X_test,Y_test)
+    print("Model score= ",score)
+    predicted_entropy = random_forest_model.predict(X_test)
+    cm = confusion_matrix(Y_test,predicted_entropy)
+    tn, fp, fn, tp = cm
+    print("Accuracy= ",(tp+tn)/(tp+tn+fp+fn))
+    recall = tp/(tp+fn)
+    precision=tp/(tp+fp)
+    print("Recall = Sensitivity = ",tp/(tp+fn))
+    print("Specificity= ", tn/(tn+fp))
+    print("Precision= ",tp/(tp+fp))
+    f1score= 2 *(recall*precision)/(precision+recall)
+    print("f1 score= ", f1score) 
 
-# def logistic_regression_classification():
-#     logistic_regression_model = LogisticRegression()
+
+
+def logistic_regression_classification():
+    logistic_regression_model = LogisticRegression()
 #     return logistic_regression_model.fit(X1,Y1.ravel())
 
 
 
-# @measure_energy(handler=csv_handler)
-# def test_logistic_regression_classification():
-#     logistic_regression_classification()
+@measure_energy(handler=csv_handler)
+def test_logistic_regression_classification():
+    logistic_regression_classification()
 
-# logistic_regression_model=logistic_regression_classification()
+logistic_regression_model=logistic_regression_classification()
 
-# @measure_energy(handler=csv_handler)
-# def test_logistic_regression_classification_inference():
-#     y_infer=logistic_regression_model.predict(X_pred)
-#     return y_infer
-
-
-# def logistic_regression_classification_prediction():
-#     print("The below details are for Logistic Regression classification..")
-#     score=logistic_regression_model.score(X_test,Y_test)
-#     print("Model score= ",score)
-#     predicted_entropy = logistic_regression_model.predict(X_test)
-#     cm = confusion_matrix(Y_test,predicted_entropy)
-#     tn, fp, fn, tp = cm.ravel()
-#     print("Accuracy= ",(tp+tn)/(tp+tn+fp+fn))
-#     recall = tp/(tp+fn)
-#     precision=tp/(tp+fp)
-#     print("Recall = Sensitivity = ",tp/(tp+fn))
-#     print("Specificity= ", tn/(tn+fp))
-#     print("Precision= ",tp/(tp+fp))
-#     f1score= 2 *(recall*precision)/(precision+recall)
-#     print("f1 score= ", f1score) 
+@measure_energy(handler=csv_handler)
+def test_logistic_regression_classification_inference():
+    y_infer=logistic_regression_model.predict(X_pred)
+    return y_infer
 
 
-# def gaussian_NB_classification():
-#     naive_bayes_model = GaussianNB()
-#     return naive_bayes_model.fit(X1,Y1.ravel())
-
-# @measure_energy(handler=csv_handler)
-# def test_gaussian_NB_classification():
-#     gaussian_NB_classification()
-
-# naive_bayes_model=gaussian_NB_classification()
-
-# @measure_energy(handler=csv_handler)
-# def test_gaussian_NB_classification_inference():
-#     y_infer=naive_bayes_model.predict(X_pred)
-#     return y_infer
-
-# def gaussian_NB_classification_prediction():  
-#     print("The below details are for Naive Bayes classification..")
-#     score=naive_bayes_model.score(X_test,Y_test)
-#     print("Model score= ",score)
-#     predicted_entropy = naive_bayes_model.predict(X_test)
-#     cm = confusion_matrix(Y_test,predicted_entropy)
-#     tn, fp, fn, tp = cm.ravel()
-#     print("Accuracy= ",(tp+tn)/(tp+tn+fp+fn))
-#     recall = tp/(tp+fn)
-#     precision=tp/(tp+fp)
-#     print("Recall = Sensitivity = ",tp/(tp+fn))
-#     print("Specificity= ", tn/(tn+fp))
-#     print("Precision= ",tp/(tp+fp))
-#     f1score= 2 *(recall*precision)/(precision+recall)
-#     print("f1 score= ", f1score) 
+def logistic_regression_classification_prediction():
+    print("The below details are for Logistic Regression classification..")
+    score=logistic_regression_model.score(X_test,Y_test)
+    print("Model score= ",score)
+    predicted_entropy = logistic_regression_model.predict(X_test)
+    cm = confusion_matrix(Y_test,predicted_entropy)
+    tn, fp, fn, tp = cm.ravel()
+    print("Accuracy= ",(tp+tn)/(tp+tn+fp+fn))
+    recall = tp/(tp+fn)
+    precision=tp/(tp+fp)
+    print("Recall = Sensitivity = ",tp/(tp+fn))
+    print("Specificity= ", tn/(tn+fp))
+    print("Precision= ",tp/(tp+fp))
+    f1score= 2 *(recall*precision)/(precision+recall)
+    print("f1 score= ", f1score) 
 
 
+def gaussian_NB_classification():
+    naive_bayes_model = GaussianNB()
+    return naive_bayes_model.fit(X1,Y1.ravel())
 
-# def SVM_classification():
-#     svm_classifier_model = SVC()
-#     return svm_classifier_model.fit(X1,Y1.ravel())
+@measure_energy(handler=csv_handler)
+def test_gaussian_NB_classification():
+    gaussian_NB_classification()
 
-# @measure_energy(handler=csv_handler)
-# def test_SVM_classification():
-#     SVM_classification()
+naive_bayes_model=gaussian_NB_classification()
+
+@measure_energy(handler=csv_handler)
+def test_gaussian_NB_classification_inference():
+    y_infer=naive_bayes_model.predict(X_pred)
+    return y_infer
+
+def gaussian_NB_classification_prediction():  
+    print("The below details are for Naive Bayes classification..")
+    score=naive_bayes_model.score(X_test,Y_test)
+    print("Model score= ",score)
+    predicted_entropy = naive_bayes_model.predict(X_test)
+    cm = confusion_matrix(Y_test,predicted_entropy)
+    tn, fp, fn, tp = cm.ravel()
+    print("Accuracy= ",(tp+tn)/(tp+tn+fp+fn))
+    recall = tp/(tp+fn)
+    precision=tp/(tp+fp)
+    print("Recall = Sensitivity = ",tp/(tp+fn))
+    print("Specificity= ", tn/(tn+fp))
+    print("Precision= ",tp/(tp+fp))
+    f1score= 2 *(recall*precision)/(precision+recall)
+    print("f1 score= ", f1score) 
 
 
-# svm_classifier_model=SVM_classification()
 
-# @measure_energy(handler=csv_handler)
-# def test_SVM_classification_inference():
-#     y_infer=svm_classifier_model.predict(X_pred)
-#     return y_infer
+def SVM_classification():
+    svm_classifier_model = SVC()
+    return svm_classifier_model.fit(X1,Y1.ravel())
 
-# def svm_classification_prediction():  
-#     print("The below details are for SVM classification..")
-#     score=svm_classifier_model.score(X_test,Y_test)
-#     print("Model score= ",score)
-#     predicted_entropy = svm_classifier_model.predict(X_test)
-#     cm = confusion_matrix(Y_test,predicted_entropy)
-#     tn, fp, fn, tp = cm.ravel()
-#     print("Accuracy= ",(tp+tn)/(tp+tn+fp+fn))
-#     recall = tp/(tp+fn)
-#     precision=tp/(tp+fp)
-#     print("Recall = Sensitivity = ",tp/(tp+fn))
-#     print("Specificity= ", tn/(tn+fp))
-#     print("Precision= ",tp/(tp+fp))
-#     f1score= 2 *(recall*precision)/(precision+recall)
-#     print("f1 score= ", f1score) 
+@measure_energy(handler=csv_handler)
+def test_SVM_classification():
+    SVM_classification()
+
+
+svm_classifier_model=SVM_classification()
+
+@measure_energy(handler=csv_handler)
+def test_SVM_classification_inference():
+    y_infer=svm_classifier_model.predict(X_pred)
+    return y_infer
+
+def svm_classification_prediction():  
+    print("The below details are for SVM classification..")
+    score=svm_classifier_model.score(X_test,Y_test)
+    print("Model score= ",score)
+    predicted_entropy = svm_classifier_model.predict(X_test)
+    cm = confusion_matrix(Y_test,predicted_entropy)
+    tn, fp, fn, tp = cm.ravel()
+    print("Accuracy= ",(tp+tn)/(tp+tn+fp+fn))
+    recall = tp/(tp+fn)
+    precision=tp/(tp+fp)
+    print("Recall = Sensitivity = ",tp/(tp+fn))
+    print("Specificity= ", tn/(tn+fp))
+    print("Precision= ",tp/(tp+fp))
+    f1score= 2 *(recall*precision)/(precision+recall)
+    print("f1 score= ", f1score) 
 
 
 
@@ -228,40 +228,40 @@ for i in range(10):
     test_decision_tree_classification_inference()
 
 
-# def decision_tree_cassification_prediction():  
-#     print("The below details are for Decision tree classification..")
-#     score=decision_tree_classifier_model.score(X_test,Y_test)
-#     print("Model score= ",score)
-#     predicted_entropy = decision_tree_classifier_model.predict(X_test)
-#     cm = confusion_matrix(Y_test,predicted_entropy)
-#     tn, fp, fn, tp = cm.ravel()
-#     print("Accuracy= ",(tp+tn)/(tp+tn+fp+fn))
-#     recall = tp/(tp+fn)
-#     precision=tp/(tp+fp)
-#     print("Recall = Sensitivity = ",tp/(tp+fn))
-#     print("Specificity= ", tn/(tn+fp))
-#     print("Precision= ",tp/(tp+fp))
-#     f1score= 2 *(recall*precision)/(precision+recall)
-#     print("f1 score= ", f1score)    
+def decision_tree_cassification_prediction():  
+    print("The below details are for Decision tree classification..")
+    score=decision_tree_classifier_model.score(X_test,Y_test)
+    print("Model score= ",score)
+    predicted_entropy = decision_tree_classifier_model.predict(X_test)
+    cm = confusion_matrix(Y_test,predicted_entropy)
+    tn, fp, fn, tp = cm.ravel()
+    print("Accuracy= ",(tp+tn)/(tp+tn+fp+fn))
+    recall = tp/(tp+fn)
+    precision=tp/(tp+fp)
+    print("Recall = Sensitivity = ",tp/(tp+fn))
+    print("Specificity= ", tn/(tn+fp))
+    print("Precision= ",tp/(tp+fp))
+    f1score= 2 *(recall*precision)/(precision+recall)
+    print("f1 score= ", f1score)    
 
 
 
 
 
-# random_forest_classification_prediction()
-# logistic_regression_classification_prediction()
-# gaussian_NB_classification_prediction()
-# svm_classification_prediction()
-# decision_tree_cassification_prediction()
+random_forest_classification_prediction()
+logistic_regression_classification_prediction()
+gaussian_NB_classification_prediction()
+svm_classification_prediction()
+decision_tree_cassification_prediction()
 
-# function_list=[test_random_forest_classification,test_logistic_regression_classification,test_gaussian_NB_classification,test_SVM_classification,test_decision_tree_classification,test_decision_tree_classification_inference,test_gaussian_NB_classification_inference,test_logistic_regression_classification_inference,test_SVM_classification_inference,test_random_forest_classification_inference]
-# #function_list=[test_random_forest_classification,test_logistic_regression_classification,test_gaussian_NB_classification,test_SVM_classification,test_decision_tree_classification]
-# for i in range(10):
-#     print("This is iteration no:",i)
-#     random.shuffle(function_list)
-#     for j in range(len(function_list)):
-#         sleep()
-#         function_list[j]()
+function_list=[test_random_forest_classification,test_logistic_regression_classification,test_gaussian_NB_classification,test_SVM_classification,test_decision_tree_classification,test_decision_tree_classification_inference,test_gaussian_NB_classification_inference,test_logistic_regression_classification_inference,test_SVM_classification_inference,test_random_forest_classification_inference]
+#function_list=[test_random_forest_classification,test_logistic_regression_classification,test_gaussian_NB_classification,test_SVM_classification,test_decision_tree_classification]
+for i in range(10):
+    print("This is iteration no:",i)
+    random.shuffle(function_list)
+    for j in range(len(function_list)):
+        sleep()
+        function_list[j]()
     
 
 
