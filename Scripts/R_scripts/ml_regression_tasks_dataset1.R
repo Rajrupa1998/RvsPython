@@ -55,43 +55,43 @@ test_linear_regression_inference<- function(){
 }
 
 
-#
-# #Gaussian Regression
-# test_gaussian_regression<-function(){
-#   train$income<- as.numeric(train$income)
-#
-#   gaussian_regression_model<- glm(train$income ~ train$hours.per.week + train$sex +  train$race + train$relationship + train$native.country + train$fnlwgt + train$occupation + train$marital.status + train$education +train$education.num + train$capital.gain +train$workclass +train$age + train$capital.loss, data=train, family=gaussian, na.action = na.exclude)
-#   return(gaussian_regression_model)
-# }
-#
-# gaussian_regression_model=test_gaussian_regression()
-# test_gaussian_regression_inference<- function(){
-#
-#   predict(gaussian_regression_model,newdata=infer,interval = 'confidence', na.action=na.exclude)
-# }
+
+#Gaussian Regression
+test_gaussian_regression<-function(){
+  train$income<- as.numeric(train$income)
+
+  gaussian_regression_model<- glm(train$income ~ train$hours.per.week + train$sex +  train$race + train$relationship + train$native.country + train$fnlwgt + train$occupation + train$marital.status + train$education +train$education.num + train$capital.gain +train$workclass +train$age + train$capital.loss, data=train, family=gaussian, na.action = na.exclude)
+  return(gaussian_regression_model)
+}
+
+gaussian_regression_model=test_gaussian_regression()
+test_gaussian_regression_inference<- function(){
+
+  predict(gaussian_regression_model,newdata=infer,interval = 'confidence', na.action=na.exclude)
+}
 
 
 
 
 
-#
-#
-# #Neural network Regression
-# test_neural_network_regression<-function(){
-#   neural_network_model<- neuralnet(income ~ hours.per.week + age + fnlwgt + education.num + capital.gain + capital.loss, data = train, linear.output = TRUE)
-#   return(neural_network_model)
-#
-# }
-#
-# neural_network_model=test_neural_network_regression()
-#
-# test_neural_network_regression_inference<- function(){
-#   # y.pred <- as.matrix(cbind(1,train))
-#   # coef(ridge_regression_model)
-#
-#   predict(neural_network_model,newdata=infer,interval = 'confidence')
-#   #predict(ridge_regression_model,newdata=infer,interval = 'confidence')
-# }
+
+
+#Neural network Regression
+test_neural_network_regression<-function(){
+  neural_network_model<- neuralnet(income ~ hours.per.week + age + fnlwgt + education.num + capital.gain + capital.loss, data = train, linear.output = TRUE)
+  return(neural_network_model)
+
+}
+
+neural_network_model=test_neural_network_regression()
+
+test_neural_network_regression_inference<- function(){
+  # y.pred <- as.matrix(cbind(1,train))
+  # coef(ridge_regression_model)
+
+  predict(neural_network_model,newdata=infer,interval = 'confidence')
+  #predict(ridge_regression_model,newdata=infer,interval = 'confidence')
+}
 
 
 
@@ -158,18 +158,18 @@ for (i in 1:10) {
   measure_energy(test_svm_regression_inference)()
 }
 
-#
-# function_list<-list()
-# function_list<-append(function_list,test_svm_regression)
-# function_list<-append(function_list,test_decision_tree)
-# #function_list<-append(function_list,test_neural_network_regression)
-# function_list<-append(function_list,test_gaussian_regression)
-# function_list<-append(function_list,test_linear_regression)
-# function_list<-append(function_list,test_svm_regression_inference)
-# function_list<-append(function_list,test_decision_tree_inference)
-# #function_list<-append(function_list,test_neural_network_regression_inference)
-# function_list<-append(function_list,test_gaussian_regression_inference)
-# function_list<-append(function_list,test_linear_regression_inference)
+
+function_list<-list()
+function_list<-append(function_list,test_svm_regression)
+function_list<-append(function_list,test_decision_tree)
+#function_list<-append(function_list,test_neural_network_regression)
+function_list<-append(function_list,test_gaussian_regression)
+function_list<-append(function_list,test_linear_regression)
+function_list<-append(function_list,test_svm_regression_inference)
+function_list<-append(function_list,test_decision_tree_inference)
+#function_list<-append(function_list,test_neural_network_regression_inference)
+function_list<-append(function_list,test_gaussian_regression_inference)
+function_list<-append(function_list,test_linear_regression_inference)
 #
 # # shuffled_list<-sample(function_list)
 # # for (j in 1:length(shuffled_list)){
@@ -178,15 +178,15 @@ for (i in 1:10) {
 # #   measure_energy(shuffled_list[[j]])()
 # # }
 #
-# for (i in 1:10) {
-#   shuffled_list<-sample(function_list)
-#   for (j in 1:length(shuffled_list)){
-#     sleep()
-#     print(shuffled_list[[j]])
-#     measure_energy(shuffled_list[[j]])()
-# }
+for (i in 1:10) {
+  shuffled_list<-sample(function_list)
+  for (j in 1:length(shuffled_list)){
+    sleep()
+    print(shuffled_list[[j]])
+     measure_energy(shuffled_list[[j]])()
+ }
 
-# }
+}
 print("Process Done..")
 
 

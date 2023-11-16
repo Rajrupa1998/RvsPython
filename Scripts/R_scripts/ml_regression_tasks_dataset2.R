@@ -35,82 +35,82 @@ sample_new <- sample(c(TRUE, FALSE), nrow(train_total), replace=TRUE, prob=c(0.7
 train <- train_total[sample_new, ]
 infer <- train_total[!sample_new, ]
 
-# 
-# #Linear regression
-# test_linear_regression <- function(){
-#   #train$income <- as.numeric(gsub("\\.", "", train$income))
-#   #train$hours.per.week <- as.numeric(gsub("\\.", "", train$hours.per.week))
-#   #ataset1$income<-droplevels(train$income)
-#   linear_regression_model<- lm(train$rating ~  train$drugName + train$condition, data = train, na.action = na.exclude)
-# 
-#   return(linear_regression_model)
-# }
-# 
-# linear_regression_model=test_linear_regression()
-# 
-# test_linear_regression_inference<- function(){
-# 
-#   predict(linear_regression_model,newdata=infer,interval = 'confidence', na.action=na.exclude)
-# }
-# 
-# for (i in 1:10) {
-#   measure_energy(test_linear_regression)()
-#   measure_energy(test_linear_regression_inference)()
-# }
-# 
-# 
+
+#Linear regression
+test_linear_regression <- function(){
+  #train$income <- as.numeric(gsub("\\.", "", train$income))
+  #train$hours.per.week <- as.numeric(gsub("\\.", "", train$hours.per.week))
+  #ataset1$income<-droplevels(train$income)
+  linear_regression_model<- lm(train$rating ~  train$drugName + train$condition, data = train, na.action = na.exclude)
+
+  return(linear_regression_model)
+}
+
+linear_regression_model=test_linear_regression()
+
+test_linear_regression_inference<- function(){
+
+  predict(linear_regression_model,newdata=infer,interval = 'confidence', na.action=na.exclude)
+}
+
+for (i in 1:10) {
+  measure_energy(test_linear_regression)()
+  measure_energy(test_linear_regression_inference)()
+}
+
+
 # 
 
 
 
-# #Gaussian Regression
-# 
-# test_gaussian_regression<-function(){
-#   train$rating<- as.numeric(train$rating)
-# 
-#   gaussian_regression_model<- glm(train$rating ~  train$drugName, data=train, family=gaussian, na.action = na.exclude)
-#   return(gaussian_regression_model)
-# }
-# 
-# 
-# 
-# gaussian_regression_model=test_gaussian_regression()
-# test_gaussian_regression_inference<- function(){
-# 
-#   predict(gaussian_regression_model,newdata=infer,interval = 'confidence', na.action=na.exclude)
-# }
-# 
-# for (i in 1:10) {
-#   measure_energy(test_gaussian_regression)()
-#   measure_energy(test_gaussian_regression_inference)()
-# }
+#Gaussian Regression
+
+test_gaussian_regression<-function(){
+  train$rating<- as.numeric(train$rating)
+
+  gaussian_regression_model<- glm(train$rating ~  train$drugName, data=train, family=gaussian, na.action = na.exclude)
+  return(gaussian_regression_model)
+}
 
 
 
-# 
-# #Neural network Regression
-# test_neural_network_regression<-function(){
-#   neural_network_model<- neuralnet(train$rating ~  train$drugName, data = train, linear.output = TRUE)
-#   return(neural_network_model)
-# 
-# }
-# 
-# neural_network_model=test_neural_network_regression()
-# 
-# test_neural_network_regression_inference<- function(){
-#   # y.pred <- as.matrix(cbind(1,train))
-#   # coef(ridge_regression_model)
-# 
-#   predict(neural_network_model,newdata=infer,interval = 'confidence')
-#   #predict(ridge_regression_model,newdata=data_infer,interval = 'confidence')
-# }
-# 
-# for (i in 1:10) {
-#   sleep()
-#   measure_energy(test_neural_network_regression)()
-#   sleep()
-#   measure_energy(test_neural_network_regression_inference)()
-# }
+gaussian_regression_model=test_gaussian_regression()
+test_gaussian_regression_inference<- function(){
+
+  predict(gaussian_regression_model,newdata=infer,interval = 'confidence', na.action=na.exclude)
+}
+
+for (i in 1:10) {
+  measure_energy(test_gaussian_regression)()
+  measure_energy(test_gaussian_regression_inference)()
+}
+
+
+
+
+#Neural network Regression
+test_neural_network_regression<-function(){
+  neural_network_model<- neuralnet(train$rating ~  train$drugName, data = train, linear.output = TRUE)
+  return(neural_network_model)
+
+}
+
+neural_network_model=test_neural_network_regression()
+
+test_neural_network_regression_inference<- function(){
+  # y.pred <- as.matrix(cbind(1,train))
+  # coef(ridge_regression_model)
+
+  predict(neural_network_model,newdata=infer,interval = 'confidence')
+  #predict(ridge_regression_model,newdata=data_infer,interval = 'confidence')
+}
+
+for (i in 1:10) {
+  sleep()
+  measure_energy(test_neural_network_regression)()
+  sleep()
+  measure_energy(test_neural_network_regression_inference)()
+}
 
 
 # 
@@ -179,35 +179,35 @@ for (i in 1:10) {
   measure_energy(test_svm_regression_inference)()
 }
 
-# 
-# function_list<-list()
-# function_list<-append(function_list,test_svm_regression)
-# function_list<-append(function_list,test_decision_tree)
-# #function_list<-append(function_list,test_neural_network_regression)
-# function_list<-append(function_list,test_gaussian_regression)
-# function_list<-append(function_list,test_linear_regression)
-# function_list<-append(function_list,test_svm_regression_inference)
-# function_list<-append(function_list,test_decision_tree_inference)
-# #function_list<-append(function_list,test_neural_network_regression_inference)
-# function_list<-append(function_list,test_gaussian_regression_inference)
-# function_list<-append(function_list,test_linear_regression_inference)
-# 
-# shuffled_list<-sample(function_list)
-# for (j in 1:length(shuffled_list)){
-#   sleep()
-#   print(shuffled_list[[j]])
-#   measure_energy(shuffled_list[[j]])()
-# }
-# 
-# for (i in 1:10) {
-#   shuffled_list<-sample(function_list)
-#   for (j in 1:length(shuffled_list)){
-#     sleep()
-#     print(shuffled_list[[j]])
-#     measure_energy(shuffled_list[[j]])()
-#   }
-#   
-# }
+
+function_list<-list()
+function_list<-append(function_list,test_svm_regression)
+function_list<-append(function_list,test_decision_tree)
+#function_list<-append(function_list,test_neural_network_regression)
+function_list<-append(function_list,test_gaussian_regression)
+function_list<-append(function_list,test_linear_regression)
+function_list<-append(function_list,test_svm_regression_inference)
+function_list<-append(function_list,test_decision_tree_inference)
+#function_list<-append(function_list,test_neural_network_regression_inference)
+function_list<-append(function_list,test_gaussian_regression_inference)
+function_list<-append(function_list,test_linear_regression_inference)
+
+shuffled_list<-sample(function_list)
+for (j in 1:length(shuffled_list)){
+  sleep()
+  print(shuffled_list[[j]])
+  measure_energy(shuffled_list[[j]])()
+}
+
+for (i in 1:10) {
+  shuffled_list<-sample(function_list)
+  for (j in 1:length(shuffled_list)){
+    sleep()
+    print(shuffled_list[[j]])
+    measure_energy(shuffled_list[[j]])()
+  }
+
+}
 print("Process Done..")
 
 

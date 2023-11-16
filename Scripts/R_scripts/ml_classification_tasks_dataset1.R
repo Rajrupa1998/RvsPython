@@ -116,18 +116,18 @@ for (i in 1:10) {
 }
 
 
-#
-# function_list<-list()
-# function_list<-append(function_list,test_random_forest_classification)
-# function_list<-append(function_list,test_logistic_regression)
-# function_list<-append(function_list,test_naivebayes_classification)
-# function_list<-append(function_list,test_svm_classification)
-# function_list<-append(function_list,test_decision_tree_classification)
-# function_list<-append(function_list,test_random_forest_classification_inference)
-# function_list<-append(function_list,test_logistic_regression_inference)
-# function_list<-append(function_list,test_naivebayes_classification_inference)
-# function_list<-append(function_list,test_svm_classification_inference)
-# function_list<-append(function_list,test_decision_tree_classification_inference)
+
+function_list<-list()
+function_list<-append(function_list,test_random_forest_classification)
+function_list<-append(function_list,test_logistic_regression)
+function_list<-append(function_list,test_naivebayes_classification)
+function_list<-append(function_list,test_svm_classification)
+function_list<-append(function_list,test_decision_tree_classification)
+function_list<-append(function_list,test_random_forest_classification_inference)
+function_list<-append(function_list,test_logistic_regression_inference)
+function_list<-append(function_list,test_naivebayes_classification_inference)
+function_list<-append(function_list,test_svm_classification_inference)
+function_list<-append(function_list,test_decision_tree_classification_inference)
 #
 #
 # shuffled_list<-sample(function_list)
@@ -138,17 +138,17 @@ for (i in 1:10) {
 #
 # }
 
-# for (i in 1:10) {
-#
-#   shuffled_list<-sample(function_list)
-#   for (j in 1:length(shuffled_list)){
-#     sleep()
-#     print(shuffled_list[[j]])
-#     measure_energy(shuffled_list[[j]])()
-#
-#   }
-#
-# }
+for (i in 1:10) {
+
+  shuffled_list<-sample(function_list)
+  for (j in 1:length(shuffled_list)){
+    sleep()
+    print(shuffled_list[[j]])
+    measure_energy(shuffled_list[[j]])()
+
+  }
+
+}
 print("Process Done..")
 
 
