@@ -35,7 +35,8 @@ infer <- train_total[!sample_new, ]
 test_logistic_regression<- function(){
   # logistic_regression_model<- glm(train$income ~ train$hours.per.week+train$workclass  + train$sex +  train$race + train$relationship + train$native.country + train$fnlwgt + train$occupation + train$marital.status + train$education +train$education.num + train$capital.gain +train$workclass +train$age + train$capital.loss,  data = train, family = binomial)
   train$rating<-as.factor(train$rating)
-  logistic_regression_model<- glm(train$rating ~  train$drugName, data = train, family = binomial)
+  #logistic_regression_model<- glm(train$rating ~  train$drugName, data = train, family = binomial)
+  logistic_regression_model<- glm(train$rating ~  train$drugName + train$condition + train$review + train$date, data = train, family = binomial)
   return(logistic_regression_model)
 }
 
@@ -54,7 +55,9 @@ for (i in 1:10) {
 
 test_naivebayes_classification<- function(){
   train$rating<-as.factor(train$rating)
-  naivebayes_classification_model<- naive_bayes(train$rating ~  train$drugName,  data = train, family = binomial)
+  
+  naivebayes_classification_model<- naive_bayes(train$rating ~  train$drugName + train$condition + train$review + train$date,  data = train, family = binomial)
+  #naivebayes_classification_model<- naive_bayes(train$rating ~  train$drugName,  data = train, family = binomial)
   return(naivebayes_classification_model)
 }
 
@@ -70,7 +73,9 @@ test_naivebayes_classification_inference<-function(){
 
 test_decision_tree_classification<- function(){
   #decision_tree_classifier<-rpart(train$income ~ train$hours.per.week+ train$workclass + train$sex +  train$race + train$relationship + train$native.country + train$fnlwgt + train$occupation + train$marital.status + train$education +train$education.num + train$capital.gain +train$workclass +train$age + train$capital.loss,  data = train)
-  decision_tree_classifier<-rpart(train$rating ~ train$drugName, data=train)
+  #decision_tree_classifier<-rpart(train$rating ~ train$drugName, data=train)
+  decision_tree_classifier<-rpart(train$rating ~  train$drugName + train$condition + train$review + train$date, data=train)
+  
   return(decision_tree_classifier)
 }
 
@@ -87,7 +92,9 @@ test_decision_tree_classification_inference<-function(){
 
 test_svm_classification<- function(){
   #svm_classifier<-svm(train$income ~ train$hours.per.week+ train$workclass + train$sex +  train$race + train$relationship + train$native.country + train$fnlwgt + train$occupation + train$marital.status + train$education +train$education.num + train$capital.gain +train$workclass +train$age + train$capital.loss,  data = train, type= 'C-classification')
-  svm_classifier<-svm(train$rating ~ train$drugName, data = train, type= 'C-classification')
+  #svm_classifier<-svm(train$rating ~ train$drugName, data = train, type= 'C-classification')
+  svm_classifier<-svm(train$rating ~  train$drugName + train$condition + train$review + train$date, data = train, type= 'C-classification')
+  
   return(svm_classifier)
 }
 
@@ -113,7 +120,8 @@ test_random_forest_classification<-function(){
   train$drugName<-as.numeric(as.character(train$drugName))
   #train$drugName<-droplevels(train$drugName)
   
-  random_forest_classifier<-randomForest(rating ~ drugName, data=train,   na.action = na.roughfix)
+  #random_forest_classifier<-randomForest(rating ~ drugName, data=train,   na.action = na.roughfix)
+  random_forest_classifier<-randomForest(rtrain$rating ~  train$drugName + train$condition + train$review + train$date, data=train,   na.action = na.roughfix)
   #random_forest_classifier<-randomForest(train$income ~  train$hours.per.week, data=train,   na.action = na.roughfix)
   #+ train$workclass + train$sex +  train$race + train$relationship + train$native.country + train$fnlwgt + train$occupation + train$marital.status + train$education +train$education.num + train$capital.gain +train$workclass +train$age + train$capital.loss, data=train,   na.action = na.exclude)
   return(random_forest_classifier)

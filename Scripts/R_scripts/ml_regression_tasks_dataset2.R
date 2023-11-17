@@ -41,7 +41,8 @@ test_linear_regression <- function(){
   #train$income <- as.numeric(gsub("\\.", "", train$income))
   #train$hours.per.week <- as.numeric(gsub("\\.", "", train$hours.per.week))
   #ataset1$income<-droplevels(train$income)
-  linear_regression_model<- lm(train$rating ~  train$drugName + train$condition, data = train, na.action = na.exclude)
+  #linear_regression_model<- lm(train$rating ~  train$drugName + train$condition , data = train, na.action = na.exclude)
+  linear_regression_model<- lm(train$rating ~  train$drugName + train$condition + train$review + train$date , data = train, na.action = na.exclude)
 
   return(linear_regression_model)
 }
@@ -68,7 +69,8 @@ for (i in 1:10) {
 test_gaussian_regression<-function(){
   train$rating<- as.numeric(train$rating)
 
-  gaussian_regression_model<- glm(train$rating ~  train$drugName, data=train, family=gaussian, na.action = na.exclude)
+  #gaussian_regression_model<- glm(train$rating ~  train$drugName, data=train, family=gaussian, na.action = na.exclude)
+  gaussian_regression_model<- glm(train$rating ~  train$drugName + train$condition + train$review + train$date, family=gaussian, na.action = na.exclude)
   return(gaussian_regression_model)
 }
 
@@ -90,7 +92,8 @@ for (i in 1:10) {
 
 #Neural network Regression
 test_neural_network_regression<-function(){
-  neural_network_model<- neuralnet(train$rating ~  train$drugName, data = train, linear.output = TRUE)
+  #neural_network_model<- neuralnet(train$rating ~  train$drugName, data = train, linear.output = TRUE)
+  neural_network_model<- neuralnet(train$rating ~  train$drugName + train$condition + train$review + train$date, data = train, linear.output = TRUE) 
   return(neural_network_model)
 
 }
@@ -135,18 +138,18 @@ for (i in 1:10) {
 # # data_infer$income<as.numeric(data_infer$income)
 # 
 # 
-# #Decision tree regression
-# test_decision_tree<- function(){
-#   decision_tree_model<- tree(train$rating ~  train$rating, data=train)
-#   return(decision_tree_model)
-# }
+#Decision tree regression
+test_decision_tree<- function(){
+  decision_tree_model<- tree(train$rating ~  train$drugName + train$condition + train$review + train$date, data=train)
+  return(decision_tree_model)
+}
 # 
-# # decision_tree_model=test_decision_tree()
-# # 
-# # test_decision_tree_inference<- function(){
-# # 
-# #   predict(decision_tree_model,newdata=infer,interval = 'confidence', na.action=na.exclude)
-# # }
+decision_tree_model=test_decision_tree()
+
+test_decision_tree_inference<- function(){
+
+  predict(decision_tree_model,newdata=infer,interval = 'confidence', na.action=na.exclude)
+}
 # 
 # for (i in 1:10) {
 #   sleep()
