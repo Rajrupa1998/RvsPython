@@ -56,7 +56,7 @@ for (i in 1:10) {
 test_naivebayes_classification<- function(){
   train$rating<-as.factor(train$rating)
   
-  naivebayes_classification_model<- naive_bayes(train$rating ~  train$drugName + train$condition + train$review + train$date,  data = train, family = binomial)
+  naivebayes_classification_model<- gaussian_naive_bayes(train$rating ~  train$drugName + train$condition + train$review + train$date,  data = train, type="class")
   #naivebayes_classification_model<- naive_bayes(train$rating ~  train$drugName,  data = train, family = binomial)
   return(naivebayes_classification_model)
 }

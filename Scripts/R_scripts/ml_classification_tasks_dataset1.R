@@ -1,5 +1,6 @@
 source("/home/rajrupa/cs22s504/energy_measurement.R")
 library(naivebayes)
+
 library(e1071)
 library(rpart)
 library(randomForest)
@@ -49,7 +50,7 @@ for (i in 1:10) {
 }
 
 test_naivebayes_classification<- function(){
-  naivebayes_classification_model<- naive_bayes(train$income ~ train$hours.per.week+ train$workclass + train$sex +  train$race + train$relationship + train$native.country + train$fnlwgt + train$occupation + train$marital.status + train$education +train$education.num + train$capital.gain +train$workclass +train$age + train$capital.loss,  data = train, family = binomial)
+  naivebayes_classification_model<- gaussian_naive_bayes(train$income ~ train$hours.per.week+ train$workclass + train$sex +  train$race + train$relationship + train$native.country + train$fnlwgt + train$occupation + train$marital.status + train$education +train$education.num + train$capital.gain +train$workclass +train$age + train$capital.loss,  data = train, type="class")
   return(naivebayes_classification_model)
 }
 
