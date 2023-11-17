@@ -44,7 +44,8 @@ dataframe['rating_n']=le_date.fit_transform(dataframe['rating'])
 # dataframe_infer['rating_n']=le_rating.fit_transform(dataframe_infer['rating'])
 
 print("hi")
-training_features = ['drugName_n']
+#training_features = ['drugName_n']
+training_features = ['drugName_n','condition_n','review_n','date_n','usefulCount']
 target = ['rating_n']
 #inference_features = ['workclass_n','sex_n','fnlwgt','occupation_n','marital.status_n','education_n','education.num','capital.gain','hours.per.week','age','capital.loss','education_n']
 #inference_target = ['income_n']

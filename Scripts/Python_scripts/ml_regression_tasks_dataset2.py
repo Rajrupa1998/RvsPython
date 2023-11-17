@@ -45,9 +45,9 @@ dataframe['rating_n']=le_date.fit_transform(dataframe['rating'])
 # dataframe_infer['date_n']=le_date.fit_transform(dataframe_infer['date'])
 # dataframe_infer['rating_n']=le_rating.fit_transform(dataframe_infer['rating'])
 
-# training_features = ['drugName_n','condition_n','review_n','date_n','usefulCount']
+training_features = ['drugName_n','condition_n','review_n','date_n','usefulCount']
 #training_features = ['drugName_n', 'condition_n']
-training_features = ['drugName_n']
+# training_features = ['drugName_n']
 target = ['rating_n']
 #X_infer=dataframe_infer[training_features]
 # X=dataframe[training_features]
