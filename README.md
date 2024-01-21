@@ -4,5 +4,5 @@ In this project, we conducted an analysis of the energy consumption associated w
 
 
 ## Additional Information
-- Results folder contains results of our experiments
+- Results folder contains results of our experiments, inside the cumulative_results folder final results(mean values) are available 
 - Scripts folder contains all the scripts used during the experiments.
