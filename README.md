@@ -1,8 +1,35 @@
-# RvsPython
-
-In this project, we conducted an analysis of the energy consumption associated with different machine learning algorithms using the standard libraries of Python and R programming languages throughout the processes of model training and inference. To quantify the energy consumption of Python scripts, we utilized pyJoules, and for R, we employed RJoules.
+# RvsPython: Energy Consumption Analysis of Machine Learning Algorithms
 
 
-## Additional Information
-- Results folder contains results of our experiments, inside the cumulative_results folder final results(mean values) are available 
-- Scripts folder contains all the scripts used during the experiments.
+## Overview
+In this project, we conducted an emprical analysis of the energy consumption associated with different machine learning algorithms using the standard libraries of Python and R programming languages throughout the processes of model training and inference. 
+
+
+## Tools Used
+- **Python**
+  - Libraries: scikit-learn libraries (specific libraries and version details provided in the draft)
+  - Energy Consumption Measurement: pyJoules
+- **R**
+  - Libraries: CRAN repository (specific libraries and version details provided in the draft)
+  - Energy Consumption Measurement: RJoules
+
+
+## Methodology
+1. **Data Collection**: Gathered datasets suitable for various machine learning tasks.
+2. **Algorithm Implementation**: Implemented machine learning algorithms using Python and R.
+3. **Energy Consumption Measurement**:
+   - Utilized pyJoules for measuring energy consumption in Python scripts.
+   - Employed RJoules for measuring energy consumption in R scripts.
+4. **Analysis**: Compared energy consumption across different algorithms, libraries, and programming languages.
+
+## Files Included
+- `Scripts/`: Contains all the scripts used during the experiments..
+- `Results/`: Stores the results of energy consumption measurements, inside the `cumulative_results/` folder final results(mean values) are available 
+- `README.md`: This file, providing an overview of the project.
+
+## How to Replicate
+1. Clone this repository to your local machine.
+2. Navigate to the `Python_scripts/` or `R_scripts/` directory depending on the language you want to analyze.
+3. Run the scripts using the respective language interpreters.
+4. Refer to the `Results/` directory for energy consumption measurements and analysis outcomes.
+
