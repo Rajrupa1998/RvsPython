@@ -22,6 +22,13 @@ In this project, we conducted an emprical analysis of the energy consumption ass
    - Employed RJoules for measuring energy consumption in R scripts.
 4. **Analysis**: Compared energy consumption across different algorithms, libraries, and programming languages.
 
+
+## Datasets Used
+1. **[Adult Dataset](https://archive.ics.uci.edu/ml/datasets/Adult)**: Available from the UCI Machine Learning Repository.
+2. **[Drug Review Dataset](https://archive.ics.uci.edu/ml/datasets/Drug+Review+Dataset+%28Drugs.com%29)**: Also available from the UCI Machine Learning Repository.
+3. **[New York City Taxi Trip Duration Dataset](https://www.kaggle.com/c/nyc-taxi-trip-duration/data)**: Available from Kaggle.
+
+
 ## Files Included
 - `Scripts/`: Contains all the scripts used during the experiments..
 - `Results/`: Stores the results of energy consumption measurements, inside the `cumulative_results/` folder final results(mean values) are available 
